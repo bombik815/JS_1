@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Угадай число</title>
+</head>
+<body>
+	<div>
+		<p>Loading, please wait...</p>
+	</div>
+</body>
+<script>
+	let guNumber = Math.round(Math.random()* 1000);
+	console.log('Введено число', guNumber);
+
+	while (true) {
+			let inpNumber = prompt('Угадайте число, введите ваше число от 1 до 999:');
+			console.log('Ваше число', inpNumber);
+
+			if (inpNumber === 'q') { 
+				break;
+			}
+			if (isNaN(inpNumber)) {
+				alert ('Вы ввели не число!');
+			}
+			else if (guNumber === parseInt(inpNumber)) {
+				alert ('Поздравляю - Вы угадали!');
+				break;
+			} 
+			else if (parseInt(inpNumber) > guNumber) {
+				alert ('Вы ввели число больше чем нужно');
+			} 
+			else {
+				alert ('Вы ввели число меньше чем нужно');
+			}
+		}
+
+
+</script>
+</html>
